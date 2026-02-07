@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   photoContainer: {
-    flex: 6,
+    flex: 6.5,
     backgroundColor: 'yellow',
 
   },
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   },
 
   captionContainer: {
-    flex: 2,
+    flex: 1.5,
     backgroundColor: 'white',
     gap: 5,
     padding: 10,
