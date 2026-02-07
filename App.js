@@ -85,14 +85,37 @@ export default function App() {
         </View>
 
         <View style={styles.captionContainer}>
-          <Text>Open up App.js to start working on your app!</Text>
+          <Text>17,289 views</Text>
+          <Text>Username Instagram template #template</Text>
+          <Text>View all 370 comments</Text>
+          <Text>4 days ago</Text>
         </View>
 
       </View>
 
       <View style={styles.bottomMenuContainer}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <View style={styles.reactionContainer}>
+          <Text>Home</Text>
+        </View>
+
+        <View style={styles.reactionContainer}>
+          <Text>Search</Text>
+        </View>
+
+        <View style={styles.reactionContainer}>
+          <Text>Add</Text>
+        </View>
+
+        <View style={styles.reactionContainer}>
+          <Text>Notifications</Text>
+        </View>
+
+        <View style={styles.reactionContainer}>
+          <Text>Profile</Text>
+        </View>
+
       </View>
+
     </View>
   );
 }
@@ -166,7 +189,7 @@ const styles = StyleSheet.create({
   },
   reactionContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'red',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -198,12 +221,17 @@ const styles = StyleSheet.create({
   captionContainer: {
     flex: 2,
     backgroundColor: 'purple',
+    gap: 5,
+    padding: 10,
 
   },
   bottomMenuContainer: {
     flex: 1,
     backgroundColor: 'pink',
     width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
 
   },
 
