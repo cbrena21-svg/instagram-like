@@ -1,7 +1,16 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
+import { useFonts } from 'expo-font';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Insta: require('./assets/fonts/VeganStylePersonalUse-5Y58.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
 
@@ -22,11 +31,11 @@ export default function App() {
           </View>
 
           <View style={styles.userNameContainer}>
-            <Text>Username</Text>
+            <Text style={styles.typeText1}>Username</Text>
           </View>
 
           <View style={styles.userEngagementContainer}>
-            <Entypo name="dots-three-horizontal" size={24} color="black" />
+            <Entypo name="dots-three-horizontal" size={24} color="gray" />
           </View>
 
         </View>
@@ -85,10 +94,10 @@ export default function App() {
         </View>
 
         <View style={styles.captionContainer}>
-          <Text>17,289 views</Text>
-          <Text>Username Instagram template #template</Text>
-          <Text>View all 370 comments</Text>
-          <Text>4 days ago</Text>
+          <Text style={styles.typeText2}>17,289 views</Text>
+          <Text style={styles.typeText2}>Username Instagram template #template</Text>
+          <Text style={styles.typeText3}>View all 370 comments</Text>
+          <Text style={styles.typeText3}>4 days ago</Text>
         </View>
 
       </View>
@@ -148,20 +157,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   titleContainer: {
-    flex: 1,
-    backgroundColor: 'red',
+    flex: 1.2,
+    backgroundColor: 'white',
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
+    paddingTop: 20,
 
   },
   titleText: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 40,
+    fontFamily: 'Insta',
   },
   postContainer: {
     flex: 8,
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
 
   },
   userContainer: {
@@ -175,7 +185,7 @@ const styles = StyleSheet.create({
   },
   userPhotoContainer: {
     flex: 2,
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
     height: '100%',
   },
   image: {
@@ -184,14 +194,14 @@ const styles = StyleSheet.create({
   },
   userNameContainer: {
     flex: 7,
-    backgroundColor: 'yellow',
+    backgroundColor: 'white',
     height: '100%',
     justifyContent: 'center',
     alignItems: 'flex-start',
   },
   userEngagementContainer: {
     flex: 1,
-    backgroundColor: 'orange',
+    backgroundColor: 'white',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -203,8 +213,9 @@ const styles = StyleSheet.create({
   },
   EngagementContainer: {
     flex: 1,
-    backgroundColor: 'orange',
+    backgroundColor: 'white',
     flexDirection: 'row',
+    padding: 3,
 
   },
   reactionContainer: {
@@ -240,7 +251,7 @@ const styles = StyleSheet.create({
 
   captionContainer: {
     flex: 2,
-    backgroundColor: 'purple',
+    backgroundColor: 'white',
     gap: 5,
     padding: 10,
 
@@ -255,26 +266,39 @@ const styles = StyleSheet.create({
 
   },
   homeIcon: {
-    width: '60%',
-    height: '60%',
+    width: '50%',
+    height: '50%',
   },
   searchIcon: {
-    width: '60%',
-    height: '60%',
+    width: '50%',
+    height: '50%',
   },
   addIcon: {
-    width: '60%',
-    height: '60%',
+    width: '50%',
+    height: '50%',
   },
   notificationsIcon: {
-    width: '60%',
-    height: '60%',
+    width: '50%',
+    height: '50%',
   },
   profileIcon: {
-    width: '60%',
-    height: '60%',
+    width: '50%',
+    height: '50%',
   },
+  typeText1: {
+    fontSize: 16,
 
-
+  },
+  typeText2: {
+    fontSize: 14,
+    fontFamily: 'Roboto',
+    color: 'gray',
+    fontWeight: 'bold',
+  },
+  typeText3: {
+    fontSize: 14,
+    fontFamily: 'Roboto',
+    color: 'gray',
+  },
 
 });
