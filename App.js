@@ -95,23 +95,43 @@ export default function App() {
 
       <View style={styles.bottomMenuContainer}>
         <View style={styles.reactionContainer}>
-          <Text>Home</Text>
+          <Image
+            style={styles.homeIcon}
+            source={require('./assets/images/home.png')}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.reactionContainer}>
-          <Text>Search</Text>
+          <Image
+            style={styles.searchIcon}
+            source={require('./assets/images/search.png')}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.reactionContainer}>
-          <Text>Add</Text>
+          <Image
+            style={styles.addIcon}
+            source={require('./assets/images/add.png')}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.reactionContainer}>
-          <Text>Notifications</Text>
+          <Image
+            style={styles.notificationsIcon}
+            source={require('./assets/images/notifications.png')}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.reactionContainer}>
-          <Text>Profile</Text>
+          <Image
+            style={styles.profileIcon}
+            source={require('./assets/images/profile.png')}
+            resizeMode="contain"
+          />
         </View>
 
       </View>
@@ -189,7 +209,7 @@ const styles = StyleSheet.create({
   },
   reactionContainer: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -234,5 +254,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
 
   },
+  homeIcon: {
+    width: '60%',
+    height: '60%',
+  },
+  searchIcon: {
+    width: '60%',
+    height: '60%',
+  },
+  addIcon: {
+    width: '60%',
+    height: '60%',
+  },
+  notificationsIcon: {
+    width: '60%',
+    height: '60%',
+  },
+  profileIcon: {
+    width: '60%',
+    height: '60%',
+  },
+
+
 
 });
