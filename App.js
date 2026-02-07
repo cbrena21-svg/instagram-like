@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
-        <Text>Instagram</Text>
+        <Text style={styles.titleText}>Instagram</Text>
       </View>
 
       <View style={styles.postContainer}>
@@ -12,11 +12,15 @@ export default function App() {
         <View style={styles.userContainer}>
 
           <View style={styles.userPhotoContainer}>
-            <Text>Open up App.js to start working on your app!</Text>
+            <Image
+              style={styles.image}
+              source={require('./assets/images/userPhotoContainer.png')}
+              resizeMode="contain"
+            />
           </View>
 
           <View style={styles.userNameContainer}>
-            <Text>Open up App.js to start working on your app!</Text>
+            <Text>userName</Text>
           </View>
 
           <View style={styles.userEngagementContainer}>
@@ -61,6 +65,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
 
   },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
   postContainer: {
     flex: 8,
     backgroundColor: 'blue',
@@ -76,16 +84,25 @@ const styles = StyleSheet.create({
 
   },
   userPhotoContainer: {
-    flex: 1,
+    flex: 2,
     backgroundColor: 'blue',
+    height: '100%',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
   },
   userNameContainer: {
-    flex: 1,
+    flex: 7,
     backgroundColor: 'yellow',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
   },
   userEngagementContainer: {
     flex: 1,
     backgroundColor: 'orange',
+    height: '100%',
   },
   photoContainer: {
     flex: 6,
