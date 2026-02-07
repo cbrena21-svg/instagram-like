@@ -31,7 +31,11 @@ export default function App() {
         </View>
 
         <View style={styles.photoContainer}>
-          <Text>Open up App.js to start working on your app!</Text>
+          <Image
+            style={styles.image}
+            source={require('./assets/images/photo.png')}
+            resizeMode="cover"
+          />
         </View>
 
         <View style={styles.EngagementContainer}>
