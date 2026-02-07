@@ -4,6 +4,7 @@ import Entypo from '@expo/vector-icons/Entypo';
 export default function App() {
   return (
     <View style={styles.container}>
+
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>Instagram</Text>
       </View>
@@ -39,7 +40,48 @@ export default function App() {
         </View>
 
         <View style={styles.EngagementContainer}>
-          <Text>Open up App.js to start working on your app!</Text>
+
+          <View style={styles.reactionContainer}>
+            <Image
+              style={styles.likeIcon}
+              source={require('./assets/images/like.png')}
+              resizeMode="contain"
+            />
+          </View>
+
+          <View style={styles.reactionContainer}>
+            <Image
+              style={styles.commentIcon}
+              source={require('./assets/images/comment.png')}
+              resizeMode="contain"
+            />
+          </View>
+
+          <View style={styles.reactionContainer}>
+            <Image
+              style={styles.shareIcon}
+              source={require('./assets/images/share.png')}
+              resizeMode="contain"
+            />
+          </View>
+
+          <View style={styles.carouselDotsContainer}>
+            <Image
+              style={styles.image}
+              source={require('./assets/images/carouselDot.png')}
+              resizeMode="contain"
+            />
+
+          </View>
+
+          <View style={styles.reactionContainer}>
+            <Image
+              style={styles.saveIcon}
+              source={require('./assets/images/save.png')}
+              resizeMode="contain"
+            />
+          </View>
+
         </View>
 
         <View style={styles.captionContainer}>
@@ -119,8 +161,40 @@ const styles = StyleSheet.create({
   EngagementContainer: {
     flex: 1,
     backgroundColor: 'orange',
+    flexDirection: 'row',
 
   },
+  reactionContainer: {
+    flex: 1,
+    backgroundColor: 'white',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  likeIcon: {
+    width: '85%',
+    height: '85%',
+  },
+  commentIcon: {
+    width: '90%',
+    height: '90%',
+  },
+  shareIcon: {
+    width: '82%',
+    height: '82%',
+  },
+  saveIcon: {
+    width: '85%',
+    height: '85%',
+  },
+  carouselDotsContainer: {
+    flex: 6,
+    backgroundColor: 'white',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
   captionContainer: {
     flex: 2,
     backgroundColor: 'purple',
@@ -129,6 +203,7 @@ const styles = StyleSheet.create({
   bottomMenuContainer: {
     flex: 1,
     backgroundColor: 'pink',
+    width: '100%',
 
   },
 
