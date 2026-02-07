@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
+import Entypo from '@expo/vector-icons/Entypo';
 
 export default function App() {
   return (
@@ -20,11 +21,11 @@ export default function App() {
           </View>
 
           <View style={styles.userNameContainer}>
-            <Text>userName</Text>
+            <Text>Username</Text>
           </View>
 
           <View style={styles.userEngagementContainer}>
-            <Text>Open up App.js to start working on your app!</Text>
+            <Entypo name="dots-three-horizontal" size={24} color="black" />
           </View>
 
         </View>
@@ -103,6 +104,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'orange',
     height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   photoContainer: {
     flex: 6,
