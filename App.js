@@ -1,8 +1,50 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { useFonts } from 'expo-font';
+import { useState } from 'react';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
-export default function App() {
+const App = () => {
+  const [liked, setLiked] = useState(false);
+  const [numberLikes, setNumberLikes] = useState(0);
+  const [likeColor, setLikeColor] = useState('gray');
+  const [saved, setSaved] = useState(false);
+  const [saveColor, setSaveColor] = useState('gray');
+
+  /* const handleLikesAndColor = () => {
+     setNumberLikes(numberLikes + 1);
+     setLikeColor('red');
+   };
+ 
+   const handleDislikesAndColor = () => {
+     setNumberDislikes(numberDislikes + 1);
+     setDislikeColor('red');
+   };*/
+
+  const handleLikeAndDislike = () => {
+    if (!liked) {
+      setNumberLikes(numberLikes + 1);
+      setLikeColor('red');
+      setLiked(true);
+    } else {
+      setNumberLikes(numberLikes - 1);
+      setLikeColor('gray');
+      setLiked(false);
+    }
+  };
+
+  const handleSaveAndColor = () => {
+    if (!saved) {
+      setSaveColor('black');
+      setSaved(true);
+    } else {
+      setSaveColor('gray');
+      setSaved(false);
+    }
+  };
+
+  //export default function App() {
   const [fontsLoaded] = useFonts({
     Insta: require('./assets/fonts/VeganStylePersonalUse-5Y58.ttf'),
   });
@@ -43,7 +85,7 @@ export default function App() {
         <View style={styles.photoContainer}>
           <Image
             style={styles.image}
-            source={require('./assets/images/photo.png')}
+            source={require('./assets/images/photo2.jpeg')}
             resizeMode="cover"
           />
         </View>
@@ -51,11 +93,13 @@ export default function App() {
         <View style={styles.EngagementContainer}>
 
           <View style={styles.reactionContainer}>
-            <Image
-              style={styles.likeIcon}
-              source={require('./assets/images/like.png')}
-              resizeMode="contain"
-            />
+            <TouchableOpacity onPress={handleLikeAndDislike} style={styles.touchableOpacity}>
+              <AntDesign name="heart" size={24} color={likeColor} />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.reactionContainer}>
+            <Text style={styles.typeText2}>{numberLikes}</Text>
           </View>
 
           <View style={styles.reactionContainer}>
@@ -84,11 +128,9 @@ export default function App() {
           </View>
 
           <View style={styles.reactionContainer}>
-            <Image
-              style={styles.saveIcon}
-              source={require('./assets/images/save.png')}
-              resizeMode="contain"
-            />
+            <TouchableOpacity onPress={handleSaveAndColor} style={styles.touchableOpacity}>
+              <FontAwesome name="bookmark" size={24} color={saveColor} />
+            </TouchableOpacity>
           </View>
 
         </View>
@@ -148,8 +190,16 @@ export default function App() {
     </View>
   );
 }
+export default App;
 
 const styles = StyleSheet.create({
+  touchableOpacity: {
+    width: 40,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
